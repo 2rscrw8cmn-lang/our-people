@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Our People — lo-fi prototype</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header class="topbar">
+    <button class="brand" id="brandBtn">our people</button>
+    <div class="top-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search"><span class="search-icon"></span></button>
+      <button class="icon-btn add" id="addBtn" aria-label="Add">+</button>
+    </div>
+  </header>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-section="our">Our People</button>
+    <button class="tab" data-section="close">Close</button>
+    <button class="tab" data-section="know">Get to Know</button>
+  </div>
+
+  <main class="deck-wrap">
+    <div class="deck-back"></div>
+    <div class="deck" id="deck"></div>
+    <div class="alpha" id="alpha"></div>
+  </main>
+
+  <div class="popover hidden" id="addMenu">
+    <button data-action="people"><strong>Add people</strong><small>Put someone new in the deck.</small></button>
+    <button data-action="note"><strong>Add note</strong><small>Jot something down.</small></button>
+  </div>
+
+  <div class="popover card-menu hidden" id="cardMenu">
+    <button data-card-action="flip">Flip card</button>
+    <button data-card-action="notes">All notes</button>
+    <button data-card-action="collapse">Put card back</button>
+  </div>
+
+  <div class="overlay hidden" id="peopleOverlay">
+    <section class="sheet">
+      <div class="handle"></div>
+      <div class="sheet-head"><div><h2>Add people</h2><p>Just enough to put a card in the deck.</p></div><button data-close="peopleOverlay">×</button></div>
+      <label>People</label>
+      <div class="chips" id="namesList"></div>
+      <div class="inline"><input id="personNameInput" placeholder="Full name"><button id="addNameBtn">+</button></div>
+      <label>Suggested card name</label>
+      <input class="title-input" id="cardTitleInput" placeholder="We'll name it for you">
+      <label>Where do they belong?</label>
+      <div class="section-choice" id="peopleSections">
+        <button data-section="our" class="selected">Our People</button>
+        <button data-section="close">Close</button>
+        <button data-section="know">Get to Know</button>
+      </div>
+      <button class="primary" id="savePeopleBtn">Add to deck</button>
+    </section>
+  </div>
+
+  <div class="overlay hidden" id="noteOverlay">
+    <section class="sheet">
+      <div class="handle"></div>
+      <div class="sheet-head"><div><h2>New note</h2><p>One thought is enough.</p></div><button data-close="noteOverlay">×</button></div>
+      <textarea id="noteText" placeholder="Jot something down…"></textarea>
+      <label>Linked to</label>
+      <div class="chips" id="selectedTags"></div>
+      <div class="tag-picker" id="tagPicker"></div>
+      <button class="primary" id="saveNoteBtn">Save note</button>
+    </section>
+  </div>
+
+  <section class="screen hidden" id="searchScreen">
+    <div class="screen-head"><button data-close="searchScreen">←</button><h2>Search</h2></div>
+    <div class="search-box"><span class="search-icon"></span><input id="searchInput" placeholder="People, kids, places, notes…"></div>
+    <div id="searchResults"></div>
+  </section>
+
+  <section class="screen hidden" id="notebookScreen">
+    <div class="screen-head"><button data-close="notebookScreen">←</button><h2>All notes</h2><button id="notebookAdd">+</button></div>
+    <div id="notebookList"></div>
+  </section>
+
+  <section class="screen hidden" id="memoryScreen">
+    <div class="screen-head"><button data-close="memoryScreen">←</button><h2>Card back</h2></div>
+    <div class="memory-card" id="memoryCard"></div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

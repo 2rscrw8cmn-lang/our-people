@@ -12,6 +12,7 @@ Early product definition and interaction design.
 
 - [Product principles](docs/PRODUCT.md)
 - [Interaction model](docs/INTERACTIONS.md)
+- [MVP wireframes](docs/WIREFRAMES.md)
 - [Data model](docs/DATA_MODEL.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Build plan](docs/BUILD_PLAN.md)
